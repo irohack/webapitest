@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <a href="./add">追加</a>
+  <table>
+    <% for(let i in content) { %>
+    <tr>
+      <% let obj = content[i]; %>
+      <td>
+        <%= obj.id %>
+      </td>
+      <td>
+        <%- obj.name %>
+      </td>
+      <td>
+        <%- obj.price %>
+      </td>
+    </tr>
+    <% } %>
+  </table>
+</body>
+
+</html>

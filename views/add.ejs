@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+	<a href="./">戻る</a>
+	<form action="/add" method="post">
+		<table>
+			<tr>
+				<td>商品名</td>
+				<td>値段</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" name="name">
+				</td>
+				<td>
+					<input type="text" name="price">
+				</td>
+				<td>
+					<button type="submit" name="button">POST</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<% if(errorMessage) { %>
+	<ul>
+		<% for (let n in errorMessage) { %>
+		<li>
+			<%= errorMessage[n].msg %>
+		</li>
+		<% } %>
+	</ul>
+	<% } %>
+
+</body>
+
+</html>
