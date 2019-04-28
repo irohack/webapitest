@@ -3,15 +3,21 @@
 
 <head>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>My test page</title>
 </head>
 
 <body>
-  <a href="./add">追加</a>
-  <table>
+  <h1>商品データベース</h1>
+  <table border="1" width="50%">
+    <tr>
+      <th>ID</th>
+      <th>NAME</th>
+      <th>PRICE</th>
+    </tr>
     <% for(let i in content) { %>
     <tr>
       <% let obj = content[i]; %>
-      <td>
+      <td align="center">
         <%= obj.id %>
       </td>
       <td>
@@ -20,9 +26,22 @@
       <td>
         <%- obj.price %>
       </td>
+      <td>
+        <form action="./delete" method="post">
+          <input type="hidden" name="id" value="<%= obj.id %>">
+          <button type="submit" name="button">削除</button>
+        </form>
+      </td>
+      <td>
+        <form action="./edit" method="get">
+          <input type="hidden" name="id" value="<%= obj.id %>">
+          <button type="submit">編集</button>
+        </form>
+      </td>
     </tr>
     <% } %>
   </table>
+  <a href="./add">追加</a>
 </body>
 
 </html>

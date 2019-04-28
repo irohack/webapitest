@@ -7,7 +7,7 @@
 
 <body>
 	<a href="./">戻る</a>
-	<form action="/add" method="post">
+	<form action="/edit" method="post">
 		<table>
 			<tr>
 				<th>商品名</th>
@@ -15,13 +15,16 @@
 			</tr>
 			<tr>
 				<td>
-					<input type="text" name="name">
+					<input type="text" name="name" value="<%- name %>">
 				</td>
 				<td>
-					<input type="text" name="price">
+					<input type="text" name="price" value="<%- price %>">
 				</td>
 				<td>
-					<button type="submit" name="button">追加</button>
+					<input type="hidden" name="id" value="<%= id %>">
+				</td>
+				<td>
+					<button type="submit" name="button">編集</button>
 				</td>
 			</tr>
 		</table>
